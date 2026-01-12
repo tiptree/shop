@@ -9,6 +9,12 @@ const scanPage = document.getElementById('scanPage');
 const paymentPage = document.getElementById('paymentPage');
 const paymentTotal = document.getElementById('paymentTotal');
 
+//初期化画面を明示的に表示
+document.getElementById('startPage').style.display = 'flex';
+document.getElementById('scanPage').style.display = 'none';
+document.getElementById('paymentPage').style.display = 'none';
+
+
 const beep = document.getElementById('beep-sound');
 
 let audioEnabled = false;
@@ -120,7 +126,6 @@ function addItem(item, itemId) {
 
 document.getElementById('checkoutBtn').addEventListener('click', () => {
   scanPage.style.display = 'none';
-  paymentPage.style.display = 'block';
   paymentTotal.textContent = `¥${total}`;
 });
 
