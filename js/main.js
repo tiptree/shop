@@ -11,6 +11,21 @@ const paymentTotal = document.getElementById('paymentTotal');
 
 const beep = document.getElementById('beep-sound');
 
+// iPhone用：最初のタップで音を有効化
+let audioEnabled = false;
+
+document.body.addEventListener('click', () => {
+  if (!audioEnabled) {
+    beep.play().then(() => {
+      beep.pause();
+      beep.currentTime = 0;
+      audioEnabled = true;
+    }).catch(() => {});
+  }
+}, { once: true });
+
+
+
 let total = 0;
 let scannedItems = {};
 let lastScanTime = 0;
