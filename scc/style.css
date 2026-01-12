@@ -4,6 +4,8 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;   /* ★ 追加 */
+  align-items: center;      /* ★ 追加 */
 }
 
 /* ---------- スタート画面 ---------- */
