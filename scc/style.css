@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.flash {
+  background-color: #fff3a0;
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#scanPage {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ← これが決定打 */
+  transition: background-color 0.5s;
+    outline: 2px solid red;
+}
+
+#video {
+  width: 55%;
+  max-width: 160px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px auto;
+}
+
+#itemDisplay img {
+  width: 60px;        /* ★ 固定サイズ */
+  height: 60px;       /* ★ 固定サイズ */
+  object-fit: contain; /* 画像を切らずに収める */
+  display: block;
+  margin: 6px auto;
+}
+
+#total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#controls {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#controls button {
+  padding: 8px 16px;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+#paymentPage {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#message {
+  margin-top: 8px;
+  font-size: 14px;
+  color: red;
+  text-align: center;
+}
