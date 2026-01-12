@@ -4,41 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>レジごっこアプリ</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="startPage">
-  <h1>レジごっこ</h1>
-  <button id="startBtn">いらっしゃいませ</button>
-</div>
-
-<div id="scanPage">
-  <video id="video" autoplay playsinline></video>
-  <canvas id="canvas" hidden></canvas>
-
-  <div id="itemDisplay"></div>
-  <div id="message"></div>
-  <div id="total">ごうけい: ¥0</div>
-
-  <div id="controls">
-    <button id="checkoutBtn">しはらい</button>
-    <button id="resetBtn">リセット</button>
+  <!-- スタート画面 -->
+  <div id="startPage">
+    <h1>レジごっこ</h1>
+    <button id="startBtn">いらっしゃいませ</button>
   </div>
-</div>
 
-<div id="paymentPage">
-  <h2>ごうけい</h2>
-  <p id="paymentTotal"></p>
-  <button id="backBtn">もどる</button>
-</div>
+  <!-- スキャン画面 -->
+  <div id="scanPage">
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas" hidden></canvas>
 
-<audio id="beep-sound"
-  src="https://raw.githubusercontent.com/tiptree/shop/main/sounds/scan_sound.mp3"
-  preload="auto">
-</audio>
+    <div id="itemDisplay"></div>
+    <div id="message"></div>
+    <div id="total">ごうけい: ¥0</div>
 
-<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
-<script src="js/main.js"></script>
+    <div id="controls">
+      <button id="checkoutBtn">しはらい</button>
+      <button id="resetBtn">リセット</button>
+    </div>
+  </div>
+
+  <!-- 支払い画面 -->
+  <div id="paymentPage">
+    <h2>ごうけい</h2>
+    <p id="paymentTotal">¥0</p>
+    <button id="backBtn">もどる</button>
+  </div>
+
+  <!-- 効果音 -->
+  <audio
+    id="beep-sound"
+    src="https://raw.githubusercontent.com/tiptree/shop/main/sounds/scan_sound.mp3"
+    preload="auto">
+  </audio>
+
+  <!-- QRライブラリ -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+
+  <!-- メインJS -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>
