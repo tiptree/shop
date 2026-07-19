@@ -121,11 +121,22 @@ function handleScan(itemId) {
     return;
   }
 
-  addItem(item, itemId);
+addItem(item, itemId);
 
-  beep.currentTime = 0;
-  beep.play().catch(() => {});
+beep.currentTime = 0;
+beep.play()
+    .then(() => {
+        beep.onended = () => {
+            speakAmount(item.price);
+        };
+    })
+    .catch(() => {
+        speakAmount(item.price);
+    });
+
 }
+
+
 
 function addItem(item, itemId) {
   if (!scannedItems[itemId]) scannedItems[itemId] = 0;
@@ -142,6 +153,8 @@ function addItem(item, itemId) {
   `;
 
   message.textContent = '';
+
+
 }
 
 
@@ -197,6 +210,9 @@ checkoutBtn.addEventListener('click', () => {
   stopCamera();
   showPage(paymentPage);
   paymentTotal.textContent = `¥${total}`;
+  
+  //合計金額を読み上げる
+  speakTotal(total);
 });
 
 // ▶ もどる → スキャン画面
